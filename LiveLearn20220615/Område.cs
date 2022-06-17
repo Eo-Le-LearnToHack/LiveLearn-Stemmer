@@ -21,11 +21,11 @@ namespace LiveLearn20220615
         {
             if (DanskeStemmer > TyskeStemmer)
             {
-                return "danske";
+                return "danske stemmer";
             } 
             else if (TyskeStemmer > DanskeStemmer)
             {
-                return "tyske";
+                return "tyske stemmer";
             }
             return "stemmelighed";
         }

@@ -8,9 +8,10 @@ namespace LiveLearn20220615
 {
     internal class MethodValidation
     {
-        public int IsANumber(string numInput)
+        public int IsAnInt(string numInput)
         {
             int numOutput;
+            string newInput;
             bool isANumber;
             isANumber = Int32.TryParse(numInput, out numOutput);
 
@@ -18,16 +19,19 @@ namespace LiveLearn20220615
             {
                 return Convert.ToInt32(numOutput);
             }
+
             else
             {
-                Console.WriteLine("This is not a number. Please enter a number.");
-                string newInput;
-                newInput = Console.ReadLine();
-                IsANumber(newInput);
+                do
+                {
+                    Console.Write("This is not an integer. Please enter an integer:\t");
+                    newInput = Console.ReadLine();
+                    isANumber = Int32.TryParse(newInput, out numOutput);
+                    
+                } while (!isANumber);
                 return Convert.ToInt32(numOutput);
             }
         }
-
 
     }
 }
