@@ -10,25 +10,25 @@ namespace LiveLearn20220615
     {
         public string Navn { get; }
         public int DanskeStemmer { get; set; }
-
         public int TyskeStemmer { get; set; }
 
-        public Område(string navn)
+        public Område(string navn) //constructor, Området skal indeholde et navn
         {
             Navn = navn;
         }
 
-        public string Resultat()
+        public string Resultat() //metoden til at sammenligne danske stemmer vs tyske stemmer
         {
             if (DanskeStemmer > TyskeStemmer)
             {
-                return "dansk";
+                return "danske";
             } 
-            if (TyskeStemmer > DanskeStemmer)
+            else if (TyskeStemmer > DanskeStemmer)
             {
-                return "tysk";
+                return "tyske";
             }
             return "stemmelighed";
         }
+
     }
 }
